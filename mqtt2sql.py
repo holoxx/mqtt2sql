@@ -529,7 +529,7 @@ class Mqtt2Sql:
                     db_connection = MySQLdb.connect(**connection)
 
                 elif self.args_.sql_type == 'sqlite':
-                    db_connection = sqlite3.connect(self.args_.sql_db)
+                    db_connection = sqlite3.connect(datetime.datetime.now().strftime(self.args_.sql_db))
                 connection_retry = 0
 
             except Exception as err:    # pylint: disable=broad-except
